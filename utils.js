@@ -49,4 +49,4 @@ async function deleteFile(file) {
   }
 }
 
-export default { readFile, writeFile, deleteFile };
+export default { readFile, writeFile, deleteFile, fileExist };

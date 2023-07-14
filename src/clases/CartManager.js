@@ -39,9 +39,9 @@ export default class CarritoManager {
   }
 
   async addProductoToCart(cartId, prodId) {
-    let dataCart = await utils.readFile(this.path, "utf-8");
-    const dataCartParse = JSON.parse(dataCart);
-    let cart = dataCartParse.find((cart) => cart.id === parseInt(id));
+    // let dataCart = await utils.readFile(this.path, "utf-8");
+    // const dataCartParse = JSON.parse(dataCart);
+    let cart = this.carrito.find((cart) => cart.id === parseInt(id));
     if (cart) {
       const prodIndex = cart.carrito.findIndex((prod) => prod.id === prodId);
       if (prodIndex !== -1) {
