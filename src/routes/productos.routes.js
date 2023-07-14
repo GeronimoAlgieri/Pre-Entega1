@@ -1,8 +1,12 @@
+import express from "express";
 import ProductManager from "../clases/ProductManager.js";
 import { Router } from "express";
 const productosManagerV1 = new ProductManager("./productos.json");
 
 const router = Router();
+
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
 
 router.get("/", async (req, res) => {
   const limite = req.query.limit;
